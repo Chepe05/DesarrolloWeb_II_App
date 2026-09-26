@@ -33,7 +33,9 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": []
+              "allowedHosts": [
+                "3l4tm6bb-4200.use.devtunnels.ms"
+              ]
             },
             "ssr": {
               "entry": "src/server.ts"
@@ -100,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "53c4b301-f0a8-4fc6-988c-5703965b19a9"
   }
 }

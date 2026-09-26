@@ -1,0 +1,11 @@
+<h1>Mi primer componente</h1>
+<section>
+  <article>
+    <h2>Counter Component Page</h2>
+    <button (click)="operationButton(1)">+1</button>
+    <button (click)="operationButton(-1)">-1</button>
+    <button (click)="operationButton(0)">Reset</button>
+    <h3>El valor del contador es: {{contador}}</h3>
+    <h3>El valor del contador con señal es: {{contadorSignal()}}</h3>
+  </article>
+</section>
