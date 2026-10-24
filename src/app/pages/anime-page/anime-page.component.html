@@ -1,0 +1,48 @@
+<h2>Anime Component</h2>
+<section class="row">
+  <div class="col-12 col-sm-6">
+    <h3>Agregar {{ name() }} - {{ power() }}</h3>
+
+    <input
+      type="text"
+      placeholder="Nombre"
+      class="form-control mb-2"
+      [value]="name()"
+      (change)="name.set(txtName.value)"
+      (input)="name.set(txtName.value)"
+      #txtName
+    />
+    <input
+      type="number"
+      placeholder="Poder"
+      class="form-control mb-2"
+      [value]="power()"
+      (input)="power.set(+txtPower.value)"
+      #txtPower
+    />
+    <button class="btn btn-primary mb-2" (click)="addCharacter()">
+      Agregar
+    </button>
+  </div>
+  <div class="col-12 col-sm-6">
+    <ul>
+      @for (character of characters(); track character.id) {
+        @if (character.power > 500) {
+          <li>
+            <span>{{ character.name }}</span>
+            <strong
+              [class.text-danger]="character.power > 9000"
+              [class.text.primary]="character.power <= 9000"
+            >
+              {{ character.power }}
+            </strong>
+          </li>
+        } @else {
+          <li>
+            <strong> !Este personaje tiene un poder muy bajo!! </strong>
+          </li>
+        }
+      }
+    </ul>
+  </div>
+</section>

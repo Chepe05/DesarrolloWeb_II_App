@@ -1,0 +1,31 @@
+<h2>Anime Super Component</h2>
+<section class="row">
+  <div class="col-12 col-sm-6">
+    <!-- Inicia componente formulario -->
+    <app-character-form></app-character-form>
+    <!-- finaliza componente formulario -->
+  </div>
+  <div class="col-12 col-sm-6">
+    <!-- inicia componente lista -->
+    <ul>
+      @for (character of characters(); track character.id) {
+        @if (character.power > 500) {
+          <li>
+            <span>{{ character.name }}</span>
+            <strong
+              [class.text-danger]="character.power > 9000"
+              [class.text.primary]="character.power <= 9000"
+            >
+              {{ character.power }}
+            </strong>
+          </li>
+        } @else {
+          <li>
+            <strong> !Este personaje tiene un poder muy bajo!! </strong>
+          </li>
+        }
+      }
+    </ul>
+    <!-- finaliza componente lista -->
+  </div>
+</section>

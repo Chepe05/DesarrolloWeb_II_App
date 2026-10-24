@@ -1,0 +1,16 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: #212121;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 25px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a.active{
+    color: red;
+}
